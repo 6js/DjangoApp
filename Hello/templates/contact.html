@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Baskin Robins Contact{% endblock title %}
+
+
+{% block body %}
+<div class="container-fluid px-0">
+    <img src="https://source.unsplash.com/1600x400/?phone" class="d-block w-100" alt="...">
+    {% comment %} <img src="/static/photo1.jpeg" class="d-block w-100" alt="..."> {% endcomment %}
+</div>
+<div class="container mb-3 py-4">
+<h2 class="text-center">Contact Us</h2>
+
+    <form method="post" action="/contact/">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" name="name" id="name">
+        </div>
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input type="text" class="form-control" id="email" name="email">
+        </div>
+        <div class="form-group">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="text" class="form-control" id="phone" name="phone">
+          </div>
+          <div class="form-group">
+            <label for="desc" class="form-label">Tell me more about yourself..</label>
+            <input type="text" class="form-control" id="desc" name="desc">
+          </div>
+        <br>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+</div>
+{% endblock body %}
